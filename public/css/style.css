@@ -1,0 +1,65 @@
+@font-face{
+    font-family:'ProximaNova';
+    src:url('../fonts/proxima_nova/WOFF/Used/01ProximaNova-Light.woff') format('woff');
+    font-weight:300;
+    font-style:light
+}
+@font-face{
+    font-family:'ProximaNova';
+    src:url('../fonts/proxima_nova/WOFF/Used/02ProximaNova-Regular.woff') format('woff');
+    font-weight:400;
+    font-style:normal
+}
+@font-face{
+    font-family:'ProximaNova';
+    src:url('../fonts/proxima_nova/WOFF/Used/03ProximaNova-Semibold.woff') format('woff');
+    font-weight:500;
+    font-style:medium
+}
+@font-face{
+    font-family:'ProximaNova';
+    src:url('../fonts/proxima_nova/WOFF/Used/04ProximaNova-Extrabld.woff') format('woff');
+    font-weight:600;
+    font-style:semi-bold
+}
+@font-face{
+    font-family:'ProximaNova';
+    src:url('../fonts/proxima_nova/WOFF/Used/05ProximaNova-Bold.woff') format('woff');
+    font-weight:700;
+    font-style:bold
+}
+
+body{
+    font-family: 'ProximaNova';
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+}
+input[type="text"].form-control{
+    outline: none !important;
+}
+input[type="text"].error{
+    border-color: #f00 !important;
+}
+
+.green{
+    color: #007103;
+}
+.yellow{
+    color: #d09900;
+}
+.red{
+    color: #ff0000;
+}
+.score{
+    border: 1px solid;
+    width: 15px;
+    display: inline-block;
+    text-align: center;
+}
+.table tbody tr th, .table tbody tr td{
+    vertical-align: middle;
+}
+.mheight{
+    height: 62px;
+}
