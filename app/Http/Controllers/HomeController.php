@@ -95,7 +95,7 @@ class HomeController extends BaseController
             '--queue' => 'default'
         ]);*/
 
-        $path = $_SERVER['DOCUMENT_ROOT'].'/../';
+        $path = $_SERVER['DOCUMENT_ROOT'].'/../app/bet/';
         exec('php '.$path.'artisan recount:score --queue > /dev/null &');
 
         $this->ajax['status'] = true;
