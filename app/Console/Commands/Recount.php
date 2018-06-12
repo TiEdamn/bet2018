@@ -51,7 +51,7 @@ class Recount extends Command
             foreach ($user->bets as $bet) {
                 if($bet->home == $bet->match->home_score && $bet->visitor == $bet->match->visitor_score)
                     $score+=3;
-                else if($bet->home == $bet->visitor && $bet->match->home_score == $bet->match->visitor_score)
+                else if(($bet->home == $bet->visitor && $bet->match->home_score == $bet->match->visitor_score) || ($bet->home > $bet->visitor && $bet->match->home_score > $bet->match->visitor_score) || ($bet->home < $bet->visitor && $bet->match->home_score < $bet->match->visitor_score))
                     $score+=1;
                 else
                     $score+=0;

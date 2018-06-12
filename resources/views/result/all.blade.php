@@ -27,7 +27,7 @@
                                                 @if($current)
                                                     @if($match->home_score == $current->home && $match->visitor_score == $current->visitor)
                                                         <td class="green text-center">{{ $current->home }} - {{ $current->visitor }}</td>
-                                                    @elseif($match->home_score == $match->visitor_score && $current->home == $current->visitor)
+                                                    @elseif(($match->home_score == $match->visitor_score && $current->home == $current->visitor) || ($match->home_score > $match->visitor_score && $current->home > $current->visitor) || ($match->home_score < $match->visitor_score && $current->home < $current->visitor))
                                                         <td class="yellow text-center">{{ $current->home }} - {{ $current->visitor }}</td>
                                                     @else
                                                         <td class="red text-center">{{ $current->home }} - {{ $current->visitor }}</td>
