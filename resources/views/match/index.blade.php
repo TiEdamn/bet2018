@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
 
-                        <form action="/match" method="POST" class="form-inline" style="margin-bottom: 20px;">
+                        <form action="match" method="POST" class="form-inline" style="margin-bottom: 20px;">
                             {{ csrf_field() }}
                             <select name="home_id" id="home_id" class="form-control">
                                 @foreach($teams as $item)
@@ -34,7 +34,7 @@
                                 </tr>
                                 @foreach($match as $item)
                                     <tr>
-                                        <td><a href="/match/{{$item->id}}">{{ $item->home->name }} - {{ $item->visitor->name }}</a></td>
+                                        <td><a href="{{$item->id}}">{{ $item->home->name }} - {{ $item->visitor->name }}</a></td>
                                         <td>{{ date('Y-m-d H:i', strtotime($item->played_at)) }}</td>
                                         <td>{{ $item->home_score }} - {{ $item->visitor_score }}</td>
                                     </tr>
