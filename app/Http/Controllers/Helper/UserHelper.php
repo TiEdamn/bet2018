@@ -9,7 +9,7 @@ class UserHelper
 {
     public static function isAdmin()
     {
-        return in_array(Auth::user()->email, ['ainane2@mail.ru']);
+        return in_array(Auth::user()->email, ['ainane2@mail.ru', 'antuan.kunov@mail.ru']);
     }
 
     public static function matchData($id)
