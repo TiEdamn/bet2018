@@ -16,9 +16,10 @@ $(document).ready(function(){
             type: 'POST',
             dataType: 'JSON',
             success: function (response) {
-                setTimeout(function(){
+                location.reload();
+                /*setTimeout(function(){
                     location.reload();
-                }, 5000);
+                }, 5000);*/
             },
             error: function (response) {
                 console.log(response);

@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Match;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends BaseController
@@ -89,14 +90,12 @@ class HomeController extends BaseController
     public function recount() {
         # Отправка таски
 
-        /*Artisan::queue('send:tickets', [
-            'payment_id' => $payment->id,
-            'send' => $request->send,
+        Artisan::queue('recount:score', [
             '--queue' => 'default'
-        ]);*/
+        ]);
 
         $path = $_SERVER['DOCUMENT_ROOT'].'/../app/bet/';
-        exec('php '.$path.'artisan recount:score --queue > /dev/null &');
+        //exec('php '.$path.'artisan recount:score --queue > /dev/null &');
 
         $this->ajax['status'] = true;
         $this->ajax['data'] = $path;
