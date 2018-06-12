@@ -20,8 +20,8 @@
                                     <option value="{{ $item->id }}" {{ $item->id == $match->visitor_id ? 'selected' : '' }}>{{ $item->name }}</option>
                                 @endforeach
                             </select>
-                            <input type="text" name="home_score" value="{{ $match->home_score }}" placeholder="{{ $match->home->name }}" class="form-control">
-                            <input type="text" name="visitor_score" value="{{ $match->visitor_score }}" placeholder="{{ $match->visitor->name }}" class="form-control">
+                            <input type="text" name="home_score" value="{{ $match->home_score ? $match->home_score : '' }}" placeholder="{{ $match->home->name }}" class="form-control">
+                            <input type="text" name="visitor_score" value="{{ $match->visitor_score ? $match->visitor_score : '' }}" placeholder="{{ $match->visitor->name }}" class="form-control">
                             <input type="text" name="played_at" value="{{ date('Y-m-d H:i', strtotime($match->played_at)) }}" placeholder="дата матча" class="form_datetime form-control">
                             <button type="submit" class="btn btn-success">Изменить</button>
                         </form>
