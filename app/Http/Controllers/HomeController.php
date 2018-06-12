@@ -88,10 +88,18 @@ class HomeController extends BaseController
 
     public function recount() {
         # Отправка таски
+
+        /*Artisan::queue('send:tickets', [
+            'payment_id' => $payment->id,
+            'send' => $request->send,
+            '--queue' => 'default'
+        ]);*/
+
         $path = $_SERVER['DOCUMENT_ROOT'].'/../';
         exec('php '.$path.'artisan recount:score --queue > /dev/null &');
 
         $this->ajax['status'] = true;
+        $this->ajax['data'] = $path;
 
         return $this->ajax;
     }
