@@ -102,8 +102,8 @@ class MatchController extends BaseController
             'home_id' => $request->home_id,
             'visitor_id' => $request->visitor_id,
             'played_at' => $request->played_at,
-            'visitor_score' => $request->visitor_score,
-            'home_score' => $request->home_score
+            'visitor_score' => $request->visitor_score ? $request->visitor_score : null,
+            'home_score' => $request->home_score ? $request->home_score : null
         ]);
 
         return redirect('/match');
