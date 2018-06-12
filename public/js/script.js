@@ -12,7 +12,7 @@ $(document).ready(function(){
         $(this).html('<i class="fa fa-spinner fa-spin"></i> Пересчитать');
 
         $.ajax({
-            url: '/recount',
+            url: 'recount',
             type: 'POST',
             dataType: 'JSON',
             success: function (response) {

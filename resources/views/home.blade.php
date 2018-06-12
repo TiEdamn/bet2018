@@ -12,7 +12,7 @@
                         <div class="row">
                             @foreach($matches as $key => $item)
                                 <div class="col-md-3">
-                                    <form action="/bet/{{ $item->id }}" method="POST" class="form-inline ajax-form" style="margin-bottom: 20px">
+                                    <form action="bet/{{ $item->id }}" method="POST" class="form-inline ajax-form" style="margin-bottom: 20px">
                                         @php
                                             $data = UserHelper::matchData($item->id);
                                         @endphp

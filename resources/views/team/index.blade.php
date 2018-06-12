@@ -22,7 +22,7 @@
                                 @foreach($teams as $key => $item)
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
-                                        <td><a href="{{$item->id}}">{{ $item->name }}</a></td>
+                                        <td><a href="team/{{$item->id}}">{{ $item->name }}</a></td>
                                     </tr>
                                 @endforeach
                             </table>

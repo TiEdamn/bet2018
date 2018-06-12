@@ -8,7 +8,7 @@
                     <div class="panel-heading">{{ $team->name }}</div>
 
                     <div class="panel-body">
-                        <form action="/team/{{ $team->id }}" method="POST" class="form-inline">
+                        <form action="team/{{ $team->id }}" method="POST" class="form-inline">
                             {{ method_field('PUT') }}
                             {{ csrf_field() }}
                             <input type="text" name="name" value="{{ $team->name }}" class="form-control">

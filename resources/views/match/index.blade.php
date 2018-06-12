@@ -34,7 +34,7 @@
                                 </tr>
                                 @foreach($match as $item)
                                     <tr>
-                                        <td><a href="{{$item->id}}">{{ $item->home->name }} - {{ $item->visitor->name }}</a></td>
+                                        <td><a href="match/{{$item->id}}">{{ $item->home->name }} - {{ $item->visitor->name }}</a></td>
                                         <td>{{ date('Y-m-d H:i', strtotime($item->played_at)) }}</td>
                                         <td>{{ $item->home_score }} - {{ $item->visitor_score }}</td>
                                     </tr>

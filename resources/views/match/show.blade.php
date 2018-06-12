@@ -8,7 +8,7 @@
                     <div class="panel-heading">{{ $match->home->name }} - {{ $match->visitor->name }}</div>
 
                     <div class="panel-body">
-                        <form action="/match/{{ $match->id }}" method="POST" class="form-inline">
+                        <form action="match/{{ $match->id }}" method="POST" class="form-inline">
                             {{ method_field('PUT') }}
                             {{ csrf_field() }}<select name="home_id" id="home_id" class="form-control">
                                 @foreach($teams as $item)
