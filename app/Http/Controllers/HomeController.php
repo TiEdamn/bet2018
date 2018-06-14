@@ -39,7 +39,7 @@ class HomeController extends BaseController
     public function index()
     {
         $matches = Match::where('played_at', '>', date('Y-m-d H:i:s'))
-            ->whereBetween('played_at', [date('Y-m-d 00:00:00'), date("Y-m-d 00:00:00", mktime(0, 0, 0, date("m") , date("d")+1,date("Y")))])
+            ->whereBetween('played_at', [date('Y-m-d 00:00:00'), date("Y-m-d 23:59:59", mktime(0, 0, 0, date("m") , date("d")+1,date("Y")))])
             ->orderBy('played_at', 'asc')
             ->get();
 

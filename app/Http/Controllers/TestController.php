@@ -19,6 +19,6 @@ class TestController extends Controller
     }
 
     public function index() {
-        echo date("Y-m-d 00:00:00", mktime(0, 0, 0, date("m") , date("d")-1,date("Y")));
+        echo date("Y-m-d 00:00:00", mktime(0, 0, 0, date("m") , date("d")+1,date("Y")));
     }
 }
