@@ -34,6 +34,9 @@ body{
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
+    background-image: url('../images/bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
 }
 input[type="text"].form-control{
     outline: none !important;
@@ -63,3 +66,10 @@ input[type="text"].error{
 .mheight{
     height: 62px;
 }
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1000px;
+    }
+}
+
