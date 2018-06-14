@@ -38,7 +38,7 @@ class HomeController extends BaseController
      */
     public function index()
     {
-        $matches = Match::where('played_at', '>', date('Y-m-d H:i'))
+        $matches = Match::where('played_at', '>', date('Y-m-d H:i:s'))
             ->whereBetween('played_at', [date('Y-m-d 00:00:00'), date('Y-m-d 23:59:59')])
             ->orderBy('played_at', 'asc')
             ->get();
@@ -52,7 +52,7 @@ class HomeController extends BaseController
 
         $match = Match::find($id);
 
-        if($match->played_at < date('Y-m-d H:i'))
+        if($match->played_at < date('Y-m-d H:i:s'))
             abort(404);
 
         $bet = Bet::firstOrCreate([
@@ -73,7 +73,7 @@ class HomeController extends BaseController
 
     public function result() {
         $users = User::all();
-        $matches = Match::where('played_at', '<', date('Y-m-d H:i'))
+        $matches = Match::where('played_at', '<', date('Y-m-d H:i:s'))
             ->get();
 
         return view('result.all', ['matches' => $matches, 'users' => $users]);
