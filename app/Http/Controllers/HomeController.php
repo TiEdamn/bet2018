@@ -74,6 +74,7 @@ class HomeController extends BaseController
     public function result() {
         $users = User::all();
         $matches = Match::where('played_at', '<', date('Y-m-d H:i:s'))
+            ->orderBy('played_at', 'desc')
             ->get();
 
         return view('result.all', ['matches' => $matches, 'users' => $users]);
