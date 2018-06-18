@@ -44,8 +44,6 @@ class Recount extends Command
 
         foreach ($users as $user) {
 
-            $user->update(['score' => 'пересчет']);
-
             $score = 0;
 
             foreach ($user->bets as $bet) {
