@@ -93,11 +93,9 @@ class HomeController extends BaseController
         # Отправка таски
         Artisan::queue('recount:score');
 
-        $path = $_SERVER['DOCUMENT_ROOT'].'/../app/bet/';
         //exec('php '.$path.'artisan recount:score --queue > /dev/null &');
 
         $this->ajax['status'] = true;
-        $this->ajax['data'] = $path;
 
         return $this->ajax;
     }

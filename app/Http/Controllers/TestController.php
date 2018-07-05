@@ -19,6 +19,29 @@ class TestController extends Controller
     }
 
     public function index() {
-        echo date("Y-m-d 00:00:00", mktime(0, 0, 0, date("m") , date("d")+1,date("Y")));
+
+        $users = User::all();
+
+        foreach ($users as $user) {
+
+            $score = 0;
+
+            foreach ($user->bets as $bet) {
+                if($bet->home == $bet->match->home_score && $bet->visitor == $bet->match->visitor_score)
+                    $score+=3;
+                else if(($bet->home == $bet->visitor && $bet->match->home_score == $bet->match->visitor_score) || ($bet->home > $bet->visitor && $bet->match->home_score > $bet->match->visitor_score) || ($bet->home < $bet->visitor && $bet->match->home_score < $bet->match->visitor_score))
+                    $score+=1;
+                else
+                    $score+=0;
+            }
+
+            echo $user->name .' - '.$score;
+
+            echo '<br/>';
+
+
+        }
+
+
     }
 }
